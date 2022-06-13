@@ -1,11 +1,11 @@
-const dotenv = require("dotenv");  //require dotenv package
-dotenv.config({ path: "./config.env" }); //import config.env file
+require("dotenv").config();  //require dotenv package
+// dotenv.config({ path: "./config.env" }); //import config.env file
 const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 
 const mongoString = process.env.DATABASE_URL;
-
+console.log('mongoString ', mongoString)
 mongoose.connect(mongoString);
 const database = mongoose.connection;
 
