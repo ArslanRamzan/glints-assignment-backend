@@ -47,6 +47,15 @@ router.patch('/update/:id', async (req, res) => {
     }
 })
 
+router.get('/getAll', async (req, res) => {
+    try {
+        const data = await Model.find();
+        res.json(data)
+    }
+    catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+})
 
 // router.post('/post-image', async (req, res) => {
 //     const data = new Model({
