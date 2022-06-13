@@ -1,7 +1,7 @@
 const express = require('express');
 const Model = require('../models/model');
 const router = express.Router();
-import S3 from 'react-aws-s3';
+// import S3 from 'react-aws-s3';
 
 
 // const config = {
@@ -48,22 +48,22 @@ router.patch('/update/:id', async (req, res) => {
 })
 
 
-router.post('/post-image', async (req, res) => {
-    const data = new Model({
-        name: req.body.name,
-    })
+// router.post('/post-image', async (req, res) => {
+//     const data = new Model({
+//         name: req.body.name,
+//     })
 
-    try {
-        const ReactS3Client = new S3(config);
-        // the name of the file uploaded is used to upload it to S3
-        ReactS3Client
-        .uploadFile(file, file.name)
-        .then(data => console.log(data.location))
-        .catch(err => console.error(err))
-    }
-    catch (error) {
-        res.status(400).json({ message: error.message })
-    }
-})
+//     try {
+//         const ReactS3Client = new S3(config);
+//         // the name of the file uploaded is used to upload it to S3
+//         ReactS3Client
+//         .uploadFile(file, file.name)
+//         .then(data => console.log(data.location))
+//         .catch(err => console.error(err))
+//     }
+//     catch (error) {
+//         res.status(400).json({ message: error.message })
+//     }
+// })
 
 module.exports = router;
