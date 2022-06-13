@@ -4,7 +4,7 @@ const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 
-const mongoString = "mongodb+srv://admin:admin@cluster0.0xvbm8n.mongodb.net/candidate";
+const mongoString = process.env.DATABASE_URL;
 console.log('mongoString ', mongoString)
 mongoose.connect(mongoString);
 const database = mongoose.connection;
@@ -23,7 +23,7 @@ app.use(express.json());
 const routes = require('./routes/routes');
 
 app.use('/api', routes)
-const port = process.env.PORT || 3000; // PORT must be in caps
+const port = process.env.PORT || 5000; // PORT must be in caps
 app.listen(port, () => {
     console.log(`Server Started at ${port}`)
 })
