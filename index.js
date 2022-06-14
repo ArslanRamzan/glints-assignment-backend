@@ -1,5 +1,6 @@
-require("dotenv").config();  //require dotenv package
-// dotenv.config({ path: "./config.env" }); //import config.env file
+// require("dotenv").config();  //require dotenv package
+const dotenv = require("dotenv");  //require dotenv package
+dotenv.config({ path: "./config.env" }); //import config.env file
 const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -24,6 +25,7 @@ const routes = require('./routes/routes');
 
 app.use('/api', routes)
 const port = process.env.PORT || 5000; // PORT must be in caps
+// const port = 5000; // PORT must be in caps
 app.listen(port, () => {
     console.log(`Server Started at ${port}`)
 })

@@ -8,6 +8,7 @@
   },
   "author": "",
   "dependencies": {
+    "aws-sdk": "^2.1152.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
