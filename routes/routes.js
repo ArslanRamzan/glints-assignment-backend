@@ -9,6 +9,7 @@ const path = require('path');
 
 //Post Method
 router.post('/post', async (req, res) => {
+    console.log('req ', req.body);
     const data = new Model({
         name: req.body.name,
         age: req.body.age,

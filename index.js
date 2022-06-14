@@ -1,11 +1,11 @@
-// require("dotenv").config();  //require dotenv package
-const dotenv = require("dotenv");  //require dotenv package
-dotenv.config({ path: "./config.env" }); //import config.env file
+require("dotenv").config();  //require dotenv package
+// const dotenv = require("dotenv");  //require dotenv package
+// dotenv.config({ path: "./config.env" }); //import config.env file
 const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 
-const mongoString = process.env.DATABASE_URL;
+const mongoString = "mongodb+srv://admin:admin@cluster0.0xvbm8n.mongodb.net/candidate";
 console.log('mongoString ', mongoString)
 mongoose.connect(mongoString);
 const database = mongoose.connection;
