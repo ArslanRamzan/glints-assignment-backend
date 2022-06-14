@@ -15,7 +15,7 @@ const dataSchema = new mongoose.Schema({
     },
     profile_image: {
         required: true,
-        type: Image
+        type: String
     },
     experiences: {
         required: true,
