@@ -55,6 +55,16 @@ router.get('/getAll', async (req, res) => {
     }
 })
 
+router.get('/getOne/:id', async (req, res) => {
+    try {
+        const data = await Model.findById(req.params.id);
+        res.json(data)
+    }
+    catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+})
+
 // router.post('/images', validateImageType, validateImageExtension, validateImageObject, validate, async (req, res, next) =>{
 //     const base64Image = req.body.image;
 //     const imageName = req.body.name;
