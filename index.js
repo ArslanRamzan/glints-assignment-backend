@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 
 const mongoString = "mongodb+srv://admin:admin@cluster0.0xvbm8n.mongodb.net/candidate";
 console.log('mongoString ', mongoString)
+console.log('process.env.AWS_ACCESS_KEY_ID ', process.env.AWS_ACCESS_KEY_ID)
+
 mongoose.connect(mongoString);
 const database = mongoose.connection;
 
